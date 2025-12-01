@@ -1,0 +1,25 @@
+<template>
+    <div class="slds-card">
+        <header class={headerStyles}>
+            <lightning-layout horizontal-align="spread" vertical-align="center">
+                <lightning-layout-item flexibility="auto">
+                    <div class="slds-align_absolute-center">
+                        <template lwc:if={iconName}>
+                            <lightning-icon class="slds-var-m-right_small" icon-name={iconName} size={iconSize}></lightning-icon>
+                        </template>
+                        <slot name="title" class={headerTitle}></slot>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto">
+                    <slot name="actions"></slot>
+                </lightning-layout-item>
+            </lightning-layout>
+        </header>
+        <main class={contentStyles}>
+            <slot name="body"></slot>
+        </main>
+        <footer class={footerStyles}>
+            <slot name="footer"></slot>
+        </footer>
+    </div>
+</template>

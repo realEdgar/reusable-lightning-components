@@ -1,4 +1,22 @@
-## Reusable Lightning Components
+# Reusable Lightning Components
 
-# Description:
+## Description:
 This project contains reusable Aura and Lightning Web Components. ready to use in any project.
+
+## Reusable Components:
+* Card
+    * `c-custom-card`
+        * Public Properties and expected values:
+            - _iconName_: any valid slds icon e.g.: `standard:account`,`utility:delete`, etc.
+            - _iconSize_: xx-small, x-small, small (default), medium, large
+            - _headerVariant_: can be any that matches with the "slds-theme_<headerVariant>", e.g., default (defaulted), shade, inverse, error, succes, etc.
+            - _footerVariant_: can be any that matches with the "slds-theme_<footerVariant>", e.g., default (defaulted), shade, inverse, error, succes, etc.
+        * Static styles:
+            - header: slds-var-p-around_medium
+            - content/body: slds-var-p-around_medium, border at the _top_ and _bottom_.
+            - footer: slds-var-p-around_medium
+        * slots:
+            - title
+            - actions
+            - body
+            - footer
