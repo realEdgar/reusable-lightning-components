@@ -31,7 +31,7 @@ export default class CustomCard extends LightningElement {
     }
 
     get footerStyles() {
-        const baseStyles = ['slds-var-p-around_medium', ];
+        const baseStyles = ['slds-var-p-around_medium'];
 
         return [...baseStyles, this.fVariant];
     }
