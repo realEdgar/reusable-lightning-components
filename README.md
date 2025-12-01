@@ -3,7 +3,7 @@
 ## Description:
 This project contains reusable Aura and Lightning Web Components. ready to use in any project.
 
-## Reusable Components:
+### Reusable Components:
 * Card
     * `c-custom-card`
         * Public Properties and expected values:
