@@ -15,7 +15,6 @@ This project contains reusable Aura and Lightning Web Components. ready to use i
             - _padding_: padding on body. allowed values: xx-small, x-small, small, medium (default), large, x-large, xx-large
         * Static styles:
             - header: slds-var-p-around_medium, slds-border_bottom
-            - content/body: slds-var-p-around_medium.
             - footer: slds-var-p-around_medium, slds-border_top
         * slots:
             - title
