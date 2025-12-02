@@ -21,3 +21,22 @@ This project contains reusable Aura and Lightning Web Components. ready to use i
             - actions
             - body
             - footer
+* Navigation: leveraging NavigationMixin
+    * `navigationMixinUtility`
+        * modules:
+            - **`navigateToRecordPage`**: 
+                - *Description*: navigate to a record page:
+                    - view
+                    - edit (not supported in LWR)
+                    - clone (not supported in LWR)
+                - *Params*:
+                    - @param {recordId} <string>: identifier of the record to navigate to. 
+                    - @param {pageName} <string>: defines the page to navigate to: 'view', 'edit' or 'clone'
+                - *prerequisites*:
+                    - import { NavigationMixin } from 'lightning/navigation'
+                    - export default class ... extends NavigationMixin(LightningElement)
+                - *Steps*:
+                    1. import { navigateToRecordPage } from 'c/navigationMixinUtility';
+                    2. Define a `recordId` and a `pageName`
+                    3. Pass to the module like this navigateToRecordPage.call(this, recordId, pageName);
+                        * call method allows keep the component context (this) in the module.
