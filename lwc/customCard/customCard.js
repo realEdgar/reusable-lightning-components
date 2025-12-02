@@ -15,7 +15,7 @@ export default class CustomCard extends LightningElement {
     }
 
     get headerStyles() {
-        const baseStyles = ['slds-var-p-around_medium'];
+        const baseStyles = ['slds-var-p-around_medium', 'slds-border_bottom'];
 
         return [...baseStyles, this.hVariant];
     }
@@ -25,13 +25,13 @@ export default class CustomCard extends LightningElement {
     }
 
     get contentStyles() {
-        const baseStyles = ['slds-var-p-around_medium', 'slds-border_top', 'slds-border_bottom'];
+        const baseStyles = ['slds-var-p-around_medium'];
 
         return [...baseStyles];
     }
 
     get footerStyles() {
-        const baseStyles = ['slds-var-p-around_medium'];
+        const baseStyles = ['slds-var-p-around_medium', 'slds-border_top'];
 
         return [...baseStyles, this.fVariant];
     }

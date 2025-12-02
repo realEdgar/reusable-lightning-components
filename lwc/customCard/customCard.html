@@ -18,8 +18,8 @@
         <main class={contentStyles}>
             <slot name="body"></slot>
         </main>
-        <footer class={footerStyles}>
-            <slot name="footer"></slot>
+        <footer>
+            <slot name="footer" class={footerStyles}></slot>
         </footer>
     </div>
 </template>
