@@ -5,6 +5,8 @@ export default class CustomCard extends LightningElement {
     @api iconName = '';
     @api iconSize = 'small';
     @api footerVariant = 'default';
+    @api withFooter = false;
+    @api padding = 'medium';
 
     get hVariant() {
         return 'slds-theme_' + this.headerVariant;
@@ -25,9 +27,8 @@ export default class CustomCard extends LightningElement {
     }
 
     get contentStyles() {
-        const baseStyles = ['slds-var-p-around_medium'];
-
-        return [...baseStyles];
+        const padding = 'slds-var-p-around_' + this.padding;
+        return [padding];
     }
 
     get footerStyles() {

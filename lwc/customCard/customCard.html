@@ -18,8 +18,10 @@
         <main class={contentStyles}>
             <slot name="body"></slot>
         </main>
-        <footer>
-            <slot name="footer" class={footerStyles}></slot>
-        </footer>
+        <template lwc:if={withFooter}>
+            <footer class={footerStyles}>
+                <slot name="footer"></slot>
+            </footer>
+        </template>
     </div>
 </template>
