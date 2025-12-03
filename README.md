@@ -40,3 +40,24 @@ This project contains reusable Aura and Lightning Web Components. ready to use i
                     2. Define a `recordId` and a `pageName`
                     3. Pass to the module like this navigateToRecordPage.call(this, recordId, pageName);
                         * call method allows keep the component context (this) in the module.
+            - **`navigateToObjectPage`**: 
+                - *Description*: navigate to an object page: home, new or list
+                - *Params*:
+                    - @param {objectApiName} <string>: any supported Salesforce Object Standard or Custom Object. 
+                    - @param {pageName} <string>: defines the page to navigate to: 'home', 'new' or 'list'
+                    - @param {defaultValues} <Object> (just for 'new'): define default field values like { fieldName: value, ... }: e.g., { Name: 'Demo Value', Email: 'example@example.com' }
+                    - @param {recordTypeId} <string> (just for 'new'): if your object has record types you can assign its Id to create that type of record.
+                    - @param {filterName} <string>: just needed in 'list' pages type.
+                - *prerequisites*:
+                    - import { NavigationMixin } from 'lightning/navigation'
+                    - export default class ... extends NavigationMixin(LightningElement)
+                - *Steps*:
+                    1. import { navigateToObjectPage } from 'c/navigationMixinUtility';
+                    2. Define a `objectApiName` and `pageName`. optionally, define `defaultValues`, `recordTypeId` or `filterName` as per your requirements.
+                    3. Call the method as you need like the following:
+                        - navigateToObjectPage.call(this, 'Account', 'home') => navigat to Account Default List (pinned list view).
+                        - navigateToObjectPage.call(this, 'Account', 'new') => navigat to Account new form with no default values.
+                        - navigateToObjectPage.call(this, 'Account', 'new', undefined, '001xxxxxxxxxxx') => navigat to Account new form with no default values but with recordTypeId defined.
+                        - navigateToObjectPage.call(this, 'Account', 'new', {Name: 'Default Name', ... }) => navigat to Account new form with default values.
+                        - navigateToObjectPage.call(this, 'Account', 'new', {Name: 'Default Name', ... }, '001xxxxxxxxxxx') => navigat to Account new form with default values and a recordTypeId defined.
+                        - navigateToObjectPage.call(this, 'Account', 'list', undefined, undefined, 'AllAccounts') => navigat to 'All Accounts' list view.
