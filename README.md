@@ -61,3 +61,14 @@ This project contains reusable Aura and Lightning Web Components. ready to use i
                         - navigateToObjectPage.call(this, 'Account', 'new', {Name: 'Default Name', ... }) => navigat to Account new form with default values.
                         - navigateToObjectPage.call(this, 'Account', 'new', {Name: 'Default Name', ... }, '001xxxxxxxxxxx') => navigat to Account new form with default values and a recordTypeId defined.
                         - navigateToObjectPage.call(this, 'Account', 'list', undefined, undefined, 'AllAccounts') => navigat to 'All Accounts' list view.
+            - **`navigateToApp`**: 
+                - *Description*: navigate to an App like standard__Sales, standard__LightningSales, etc.
+                - *Params*:
+                    - @param: {appTarget} <String>: app api name supported by the navigation mixin.
+                - *prerequisites*:
+                    - import { NavigationMixin } from 'lightning/navigation'
+                    - export default class ... extends NavigationMixin(LightningElement)
+                - *Steps*:
+                    1. import { navigateToObjectPage } from 'c/navigationMixinUtility';
+                    2. Define an `appTarget` and pass to the module.
+                    3. use in your component like this: navigateToApp.call(this, 'LightningSales');

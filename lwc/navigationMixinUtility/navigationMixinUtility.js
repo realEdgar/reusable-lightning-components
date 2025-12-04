@@ -43,4 +43,22 @@ function navigateToObjectPage(objectApiName, pageName, defaultValues, recordType
     this[NavigationMixin.Navigate](pageReference);
 }
 
-export { navigateToRecordPage, navigateToObjectPage }
+/**
+ * @description: navigate to an app: standard__Sales, standard__LightningSales, etc.
+ * @example: Sales App | navigateToApp.call(this, 'Sales');
+ * Note: NavigationMixin is required in the component you want to use this module: ... extends NavigationMixin(LightningElement) {}
+ * Note 2: See README file for more details.
+*/
+function navigateToApp(appTarget) {
+    const target = `standard__${appTarget}`;
+    const pageReference = {
+        type: 'standard__app',
+        attributes: {
+            appTarget: target
+        }
+    }
+
+    this[NavigationMixin.Navigate](pageReference);
+}
+
+export { navigateToRecordPage, navigateToObjectPage, navigateToApp }
