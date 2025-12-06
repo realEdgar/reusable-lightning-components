@@ -69,6 +69,6 @@ This project contains reusable Aura and Lightning Web Components. ready to use i
                     - import { NavigationMixin } from 'lightning/navigation'
                     - export default class ... extends NavigationMixin(LightningElement)
                 - *Steps*:
-                    1. import { navigateToObjectPage } from 'c/navigationMixinUtility';
+                    1. import { navigateToApp } from 'c/navigationMixinUtility';
                     2. Define an `appTarget` and pass to the module.
                     3. use in your component like this: navigateToApp.call(this, 'LightningSales');
