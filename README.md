@@ -73,8 +73,8 @@ This project contains reusable Aura and Lightning Web Components. ready to use i
                     2. Define an `appTarget` and pass to the module.
                     3. use in your component like this: navigateToApp.call(this, 'LightningSales');
 * Custom LightningDatatable: reusable custom lightning-datatable data type. it extends lightning-datatable functionality.
-    - `customDatatable`
-        - `**customDatatypes**`:
+    * `customDatatable`
+        * `**customDatatypes**`:
             - `cReference`: build any link on a data table that let users navigate to any available record page:
                 - type attributes:
                     - `label`: value to be displayed in front of the link
