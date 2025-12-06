@@ -4,7 +4,7 @@
 This project contains reusable Aura and Lightning Web Components. ready to use in any project.
 
 ### Reusable Components:
-* Card
+* #### Card
     * `c-custom-card`
         * Public Properties and expected values:
             - _iconName_: any valid slds icon e.g.: `standard:account`,`utility:delete`, etc.
@@ -21,7 +21,7 @@ This project contains reusable Aura and Lightning Web Components. ready to use i
             - actions
             - body
             - footer
-* Navigation: leveraging NavigationMixin
+* #### Navigation: leveraging NavigationMixin
     * `navigationMixinUtility`
         * modules:
             - **`navigateToRecordPage`**: 
@@ -72,7 +72,7 @@ This project contains reusable Aura and Lightning Web Components. ready to use i
                     - import { navigateToApp } from 'c/navigationMixinUtility';
                     - Define an `appTarget` and pass to the module.
                     - use in your component like this: navigateToApp.call(this, 'LightningSales');
-* Custom LightningDatatable: reusable custom lightning-datatable data type. it extends lightning-datatable functionality.
+* #### Custom LightningDatatable: reusable custom lightning-datatable data type. it extends lightning-datatable functionality.
     * `customDatatable`
         * `**customDatatypes**`:
             - `cReference`: build any link on a data table that let users navigate to any available record page:
