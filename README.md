@@ -36,9 +36,9 @@ This project contains reusable Aura and Lightning Web Components. ready to use i
                     - import { NavigationMixin } from 'lightning/navigation'
                     - export default class ... extends NavigationMixin(LightningElement)
                 - *Steps*:
-                    1. import { navigateToRecordPage } from 'c/navigationMixinUtility';
-                    2. Define a `recordId` and a `pageName`
-                    3. Pass to the module like this navigateToRecordPage.call(this, recordId, pageName);
+                    - import { navigateToRecordPage } from 'c/navigationMixinUtility';
+                    - Define a `recordId` and a `pageName`
+                    - Pass to the module like this navigateToRecordPage.call(this, recordId, pageName);
                         * call method allows keep the component context (this) in the module.
             - **`navigateToObjectPage`**: 
                 - *Description*: navigate to an object page: home, new or list
@@ -52,9 +52,9 @@ This project contains reusable Aura and Lightning Web Components. ready to use i
                     - import { NavigationMixin } from 'lightning/navigation'
                     - export default class ... extends NavigationMixin(LightningElement)
                 - *Steps*:
-                    1. import { navigateToObjectPage } from 'c/navigationMixinUtility';
-                    2. Define a `objectApiName` and `pageName`. optionally, define `defaultValues`, `recordTypeId` or `filterName` as per your requirements.
-                    3. Call the method as you need like the following:
+                    - import { navigateToObjectPage } from 'c/navigationMixinUtility';
+                    - Define a `objectApiName` and `pageName`. optionally, define `defaultValues`, `recordTypeId` or `filterName` as per your requirements.
+                    - Call the method as you need like the following:
                         - navigateToObjectPage.call(this, 'Account', 'home') => navigat to Account Default List (pinned list view).
                         - navigateToObjectPage.call(this, 'Account', 'new') => navigat to Account new form with no default values.
                         - navigateToObjectPage.call(this, 'Account', 'new', undefined, '001xxxxxxxxxxx') => navigat to Account new form with no default values but with recordTypeId defined.
@@ -69,9 +69,9 @@ This project contains reusable Aura and Lightning Web Components. ready to use i
                     - import { NavigationMixin } from 'lightning/navigation'
                     - export default class ... extends NavigationMixin(LightningElement)
                 - *Steps*:
-                    1. import { navigateToApp } from 'c/navigationMixinUtility';
-                    2. Define an `appTarget` and pass to the module.
-                    3. use in your component like this: navigateToApp.call(this, 'LightningSales');
+                    - import { navigateToApp } from 'c/navigationMixinUtility';
+                    - Define an `appTarget` and pass to the module.
+                    - use in your component like this: navigateToApp.call(this, 'LightningSales');
 * Custom LightningDatatable: reusable custom lightning-datatable data type. it extends lightning-datatable functionality.
     * `customDatatable`
         * `**customDatatypes**`:
