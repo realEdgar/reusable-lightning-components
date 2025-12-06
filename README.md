@@ -55,12 +55,12 @@ This project contains reusable Aura and Lightning Web Components. ready to use i
                     - import { navigateToObjectPage } from 'c/navigationMixinUtility';
                     - Define a `objectApiName` and `pageName`. optionally, define `defaultValues`, `recordTypeId` or `filterName` as per your requirements.
                     - Call the method as you need like the following:
-                        - navigateToObjectPage.call(this, 'Account', 'home') => navigat to Account Default List (pinned list view).
-                        - navigateToObjectPage.call(this, 'Account', 'new') => navigat to Account new form with no default values.
-                        - navigateToObjectPage.call(this, 'Account', 'new', undefined, '001xxxxxxxxxxx') => navigat to Account new form with no default values but with recordTypeId defined.
-                        - navigateToObjectPage.call(this, 'Account', 'new', {Name: 'Default Name', ... }) => navigat to Account new form with default values.
-                        - navigateToObjectPage.call(this, 'Account', 'new', {Name: 'Default Name', ... }, '001xxxxxxxxxxx') => navigat to Account new form with default values and a recordTypeId defined.
-                        - navigateToObjectPage.call(this, 'Account', 'list', undefined, undefined, 'AllAccounts') => navigat to 'All Accounts' list view.
+                        * navigateToObjectPage.call(this, 'Account', 'home') => navigat to Account Default List (pinned list view).
+                        * navigateToObjectPage.call(this, 'Account', 'new') => navigat to Account new form with no default values.
+                        * navigateToObjectPage.call(this, 'Account', 'new', undefined, '001xxxxxxxxxxx') => navigat to Account new form with no default values but with recordTypeId defined.
+                        * navigateToObjectPage.call(this, 'Account', 'new', {Name: 'Default Name', ... }) => navigat to Account new form with default values.
+                        * navigateToObjectPage.call(this, 'Account', 'new', {Name: 'Default Name', ... }, '001xxxxxxxxxxx') => navigat to Account new form with default values and a recordTypeId defined.
+                        * navigateToObjectPage.call(this, 'Account', 'list', undefined, undefined, 'AllAccounts') => navigat to 'All Accounts' list view.
             - **`navigateToApp`**: 
                 - *Description*: navigate to an App like standard__Sales, standard__LightningSales, etc.
                 - *Params*:
