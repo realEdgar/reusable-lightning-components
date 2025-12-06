@@ -72,6 +72,7 @@ This project contains reusable Aura and Lightning Web Components. ready to use i
                     1. import { navigateToApp } from 'c/navigationMixinUtility';
                     2. Define an `appTarget` and pass to the module.
                     3. use in your component like this: navigateToApp.call(this, 'LightningSales');
+
 * Custom LightningDatatable:
     - **Description**: reusable custom lightning-datatable data type. it extends lightning-datatable functionality.
         - `customDatatable`
