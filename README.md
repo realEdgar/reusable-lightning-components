@@ -79,3 +79,7 @@ This project contains reusable Lightning Web Components. ready to use in any pro
             - auxiliar components:
                 - `c-reference`: manage the logic to navigate. it receives a label and the record Id. (it can be reused in other contexts.)
         - `cPicklist`: Editable Picklist datatype in a table:
+            - type attributes:
+                - `value`: value to be displayed on the view and editable (selected value).
+                - `context`: combobox name, use a unique value like the recordId.
+                - `options`: List of picklist values.
