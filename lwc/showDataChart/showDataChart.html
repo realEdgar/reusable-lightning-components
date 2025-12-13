@@ -1,0 +1,8 @@
+<template>
+    <article>
+        <canvas class="container" height="500"></canvas>
+    </article>
+    <div class="slds-is-static" lwc:if={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>
+    </div>
+</template>

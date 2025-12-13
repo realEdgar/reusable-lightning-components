@@ -83,3 +83,19 @@ This project contains reusable Lightning Web Components. ready to use in any pro
                 - `value`: value to be displayed on the view and editable (selected value).
                 - `context`: combobox name, use a unique value like the recordId.
                 - `options`: List of picklist values.
+#### Show Data Chart: reusable chart for multiples set of data.
+* `showDataChart`
+    * **`Prerequisites`**: upload chartJS library as static resource. Download here: https://www.chartjs.org/docs/latest/
+    * **`Public properties and Method`**:
+        - _type_: line or bar.
+        - _listOfData_: List of Lists, e.g.: [[{},{},{}],[{},{}]], two graphics on the same chart.
+            - each object ({}) is an item on the chart.
+                - Object may define the following properties: 
+                    - {
+                        Type: 'line' or 'bar', (required)
+                        ChartLabel: x-axis label value, (required)
+                        Amount: y-axis height value, (required)
+                        PointBackColor: any css color, e.g.: 'blue' or '#000000', or 'rgb(0, 0, 0)'
+                        BackColor: any css color, e.g.: 'blue' or '#000000', or 'rgb(0, 0, 0)'
+                    } 
+        - _refreshChart()_: call from parent component to refresh the chart.
