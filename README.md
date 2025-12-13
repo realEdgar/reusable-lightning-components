@@ -71,10 +71,11 @@ This project contains reusable Lightning Web Components. ready to use in any pro
             * navigateToObjectPage.call(this, 'Account', 'list', undefined, undefined, 'AllAccounts') => navigat to 'All Accounts' list view.
 #### Custom LightningDatatable: reusable custom lightning-datatable data type. it extends lightning-datatable functionality.
 * `customDatatable`
-   * **`customDatatypes`**:
-      - `cReference`: build any link on a data table that let users navigate to any available record page:
-         - type attributes:
-            - `label`: value to be displayed in front of the link
-            - `recordId`: record identifier to navigate to.
-         - auxiliar components:
-         - `c-reference`: manage the logic to navigate. it receives a label and the record Id. (it can be reused in other contexts.)
+    * **`customDatatypes`**:
+        - `cReference`: build any link on a data table that let users navigate to any available record page:
+            - type attributes:
+                - `label`: value to be displayed in front of the link
+                - `recordId`: record identifier to navigate to.
+            - auxiliar components:
+                - `c-reference`: manage the logic to navigate. it receives a label and the record Id. (it can be reused in other contexts.)
+        - `cPicklist`: Editable Picklist datatype in a table:
