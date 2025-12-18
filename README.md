@@ -99,3 +99,16 @@ This project contains reusable Lightning Web Components. ready to use in any pro
                         BackColor: any css color, e.g.: 'blue' or '#000000', or 'rgb(0, 0, 0)'
                     } 
         - _refreshChart()_: call from parent component to refresh the chart.
+#### GraphQL Utility: Utility component to retrive data using graphql module.
+* `graphQLUtility`
+    * **`Functions`**:
+        - _buildSingleObjectQuery_: build a graphql query to get Salesforce data.
+            - Params:
+                - objectApiName: String
+                - params:List<Objects>
+                - filters: List<Objects> or String
+                - fields: List<String>
+        - _parseGQL_: minimize the complexity of the data returned by a graphql call.
+            - params:
+                - objectApiName: String
+                - data: object.
