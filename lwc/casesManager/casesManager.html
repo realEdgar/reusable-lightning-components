@@ -1,0 +1,69 @@
+<template>
+    <header class="slds-box slds-theme_default slds-var-m-bottom_small">
+        <lightning-layout horizontal-align="spread" vertical-align="center" multiple-rows>
+            <lightning-layout-item flexibility="auto">
+                <h2 class="slds-text-heading_small slds-var-m-bottom_small">Filters</h2>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" large-device-size="8" medium-device-size="6" small-device-size="2"></lightning-layout-item>
+            <lightning-layout-item flexibility="auto">
+                <lightning-button variant="outline-brand" label="Refresh" onclick={handleRefresh}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" large-device-size="8" medium-device-size="8" small-device-size="12">
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2 slds-var-p-right_xx-small">
+                        <lightning-combobox name="status" label="Status" value={selectedStatus} placeholder="Filter by status"
+                            options={statusOptions} onchange={handleStatusChange} variant="label-hidden"></lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-var-p-left_xx-small">
+                        <lightning-input name="caseNumber" type="text" label="Case Number" value={caseNumber} placeholder="Enter Case Number" 
+                            onchange={handleCaseNumberChange} variant="label-hidden"></lightning-input>
+                    </div>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </header>
+    <main class="slds-box slds-theme_default">
+        <template lwc:if={isLoading}>
+            <div class="slds-is-relative" style="min-height: 10rem">
+                <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>
+            </div>
+        </template>
+        <template lwc:elseif={isData}>
+            <lightning-layout horizontal-align="center" multiple-rows>
+                <template for:each={cases} for:item="caseR">
+                    <lightning-layout-item key={caseR.Id} size="12" large-device-size="4" medium-device-size="6" small-device-size="12" padding="around-small">
+                        <article class="slds-box slds-theme_shade">
+                            <div class="slds-float_left">
+                                <lightning-icon icon-name="standard:case" size="small" title="Case" variant="inverse"></lightning-icon>
+                            </div>
+                            <h3 class="slds-text-title_bold slds-text-align_center">
+                                <a data-id={caseR.Id} onclick={handleNavigateRecord}>{caseR.CaseNumber}</a>
+                            </h3>
+                            <p class="slds-text-align_center slds-truncate">{caseR.Subject}</p>
+                            <p class="slds-text-align_center slds-var-m-around_x-small">{caseR.Status}</p>
+                            <p>{caseR.Description}</p>
+                            <p class="slds-text-align_center">
+                                Date/Time Opened: <lightning-formatted-date-time value={caseR.CreatedDate} day="2-digit" month="short" year="2-digit"></lightning-formatted-date-time>
+                            </p>
+                            <template lwc:if={caseR.isClosed}>
+                                <p class="slds-text-align_center">
+                                    Date/Time Closed: <lightning-formatted-date-time value={caseR.ClosedDate} day="2-digit" month="short" year="2-digit"></lightning-formatted-date-time>
+                                </p>
+                            </template>
+                        </article>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </template>
+        <template lwc:elseif={isErrors}>
+            <p class="slds-text-align_center slds-text-color_error">
+                {errorMessages}
+            </p>
+        </template>
+        <template lwc:else>
+            <p class="slds-text-align_center">
+                There is no data to show.
+            </p>
+        </template>
+    </main>
+</template>

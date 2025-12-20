@@ -114,3 +114,4 @@ This project contains reusable Lightning Web Components. ready to use in any pro
             - params:
                 - objectApiName: String
                 - data: object.
+    * **`Example`**: `caseManager`.
