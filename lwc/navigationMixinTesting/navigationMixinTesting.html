@@ -1,0 +1,39 @@
+<template>
+    <lightning-card>
+        <h1 slot="title">Navigate to an App</h1>
+        <section class="slds-var-p-horizontal_medium slds-var-p-vertical_small">
+            <lightning-input type="text" label="Type App DevName" value={appTarget} onchange={handleChangeApp} placeholder="App Name"></lightning-input>
+            <div class="slds-var-m-top_medium">
+                <lightning-button variant="brand-outline" label="Navigate to App" onclick={handleNavigateToApp}></lightning-button>
+            </div>
+        </section>
+    </lightning-card>
+    <lightning-card>
+        <h1 slot="title">Navigate to a Record Page</h1>
+        <section class="slds-var-p-horizontal_medium slds-var-p-vertical_small">
+            <lightning-combobox label="Select Page" name="pages" options={pageOptions} onchange={handlePageChange}
+                placeholder="Select Page" value={selectedPage} variant="standard"></lightning-combobox>
+            <lightning-record-picker label="Choose an Account" placeholder="type here..."
+                object-api-name="Account" onchange={handleChosenAccount}></lightning-record-picker>
+            <div class="slds-var-m-top_medium">
+                <lightning-button variant="brand-outline" label="Navigate to Record Page" onclick={handleNavigateToRecordPage}></lightning-button>
+            </div>
+        </section>
+    </lightning-card>
+    <lightning-card>
+        <h1 slot="title">Navigate to an Object Page</h1>
+        <section class="slds-var-p-horizontal_medium slds-var-p-vertical_small">
+            <lightning-combobox label="Select Object Page" name="pages2" options={objectPageOptions} onchange={handleObjectPageChange}
+            placeholder="Select Page" value={selectedObjectPage} variant="standard"></lightning-combobox>
+            <lightning-combobox label="Select Object" name="objects" options={objectOptions} onchange={handleObjectChange}
+                placeholder="Select Page" value={selectedObject} variant="standard"></lightning-combobox>
+            <template lwc:if={isListPage}>
+                <lightning-combobox label="Select List View" name="listViews" options={listViewsOptions} onchange={handleSelectedListChange}
+                    placeholder="Select Page" value={selectedListView} variant="standard"></lightning-combobox>
+            </template>
+            <div class="slds-var-m-top_medium">
+                <lightning-button variant="brand" label="Navigate to Object Page" onclick={handleNavigateToObjectPage}></lightning-button>
+            </div>
+        </section>
+    </lightning-card>
+</template>

@@ -69,6 +69,7 @@ This project contains reusable Lightning Web Components. ready to use in any pro
             * navigateToObjectPage.call(this, 'Account', 'new', {Name: 'Default Name', ... }) => navigat to Account new form with default values.
             * navigateToObjectPage.call(this, 'Account', 'new', {Name: 'Default Name', ... }, '001xxxxxxxxxxx') => navigat to Account new form with default values and a recordTypeId defined.
             * navigateToObjectPage.call(this, 'Account', 'list', undefined, undefined, 'AllAccounts') => navigat to 'All Accounts' list view.
+* **`Examples`**: `navigationMixinTesting`
 #### Custom LightningDatatable: reusable custom lightning-datatable data type. it extends lightning-datatable functionality.
 * `customDatatable`
     * **`customDatatypes`**:
