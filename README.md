@@ -108,6 +108,8 @@ This project contains reusable Lightning Web Components. ready to use in any pro
                 - params:List<Objects>
                 - filters: List<Objects> or String
                 - fields: List<String>
+                - limit: Integer
+                - orderBy: String
         - _parseGQL_: minimize the complexity of the data returned by a graphql call.
             - params:
                 - objectApiName: String

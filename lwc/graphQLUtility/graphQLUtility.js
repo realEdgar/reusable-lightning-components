@@ -6,9 +6,11 @@ const INVALID_MSG = 'Invalid objectApiName or fields';
  * @param {List<Object>} params: object e.g.: { label, type }
  * @param {List<Object> or string} filters: object e.g.: { fieldName, operator, value }
  * @param {List<String>} fields
+ * @param {Integer} limit: define the first X values.: 10 by default.
+ * @param {String} fields. define the order of the data. e.g., 'orderBy: { CreatedDate: { order: DESC } }'
  * @returns {GraphQLResult} GraphQLResult: { query, error }
  */
-const buildSingleObjectQuery = (objectApiName, params, filters, fields) => {
+const buildSingleObjectQuery = (objectApiName, params, filters, fields, limit = 10, orderBy) => {
     let result;
     try {
         if (FALSY_VALUES.includes(objectApiName) || FALSY_VALUES.includes(fields) || (typeof fields === 'object' && FALSY_VALUES.includes(fields.length))) {
@@ -18,16 +20,17 @@ const buildSingleObjectQuery = (objectApiName, params, filters, fields) => {
 
         let objectNameQL = objectApiName.replaceAll('__c', '').replaceAll('_', '');
         let method = `get${objectNameQL}`;
-        let filtersMap = '';
+        let order = FALSY_VALUES.includes(orderBy) ? '' : orderBy;
+        let filtersMap = `(first: ${limit} ${order})`;
         if (params) {
             method = `get${objectNameQL}(${params.map(param => (`${param.label}: ${param.type}`)).join(',')})`;
         }
 
         if (!FALSY_VALUES.includes(filters)) {
             if (typeof filters === 'string') {
-                filtersMap = `(where: { ${filters} })`;
+                filtersMap = `(first: ${limit} ${order} where: { ${filters} })`;
             } else if (typeof filters === 'object' && !Array.isArray(filters)) {
-                filtersMap = `(where: {${filters.map(filter => (` ${filter.fieldName}: { ${filter.operator}: ${filter.value} } `)).join(' ')}})`;
+                filtersMap = `(first: ${limit} ${order} where: {${filters.map(filter => (` ${filter.fieldName}: { ${filter.operator}: ${filter.value} } `)).join(' ')}})`;
             }
         }
 
