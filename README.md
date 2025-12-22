@@ -84,6 +84,10 @@ This project contains reusable Lightning Web Components. ready to use in any pro
                 - `value`: value to be displayed on the view and editable (selected value).
                 - `context`: combobox name, use a unique value like the recordId.
                 - `options`: List of picklist values.
+    * **examples``**: `accountRelatedContacts`, inclues:
+        - inline edit for picklist.
+        - user is able to save.
+        - user is able to cancel.
 #### Show Data Chart: reusable chart for multiples set of data.
 * `showDataChart`
     * **`Prerequisites`**: upload chartJS library as static resource. Download here: https://www.chartjs.org/docs/latest/
